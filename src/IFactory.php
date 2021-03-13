@@ -2,7 +2,7 @@
 
 namespace h4kuna\Ares;
 
-use GuzzleHttp;
+use GuzzleHttp\Client;
 
 interface IFactory
 {
@@ -10,7 +10,7 @@ interface IFactory
 	function createData(array $data): Data;
 
 
-	function createGuzzleClient(array $options): GuzzleHttp\Client;
+	function createGuzzleClient(array $options): Client;
 
 
 	function createDataProvider(): DataProvider;
