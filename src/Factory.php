@@ -2,7 +2,7 @@
 
 namespace h4kuna\Ares;
 
-use GuzzleHttp;
+use GuzzleHttp\Client;
 
 class Factory implements IFactory
 {
@@ -19,9 +19,9 @@ class Factory implements IFactory
 	}
 
 
-	public function createGuzzleClient(array $options = [CURLOPT_CONNECTTIMEOUT => 30]): GuzzleHttp\Client
+	public function createGuzzleClient(array $options = [CURLOPT_CONNECTTIMEOUT => 30]): Client
 	{
-		return new GuzzleHttp\Client(['curl' => $options, 'headers' => ['X-Powered-By' => 'h4kuna/ares']]);
+		return new Client(['curl' => $options, 'headers' => ['X-Powered-By' => 'h4kuna/ares']]);
 	}
 
 
